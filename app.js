@@ -3,12 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register'); 
-var adminRouter = require('./routes/adminhome'); 
-var managerRouter = require('./routes/managerhome'); 
-var userRouter = require('./routes/userhome'); 
+
 
 var app = express();
 
@@ -25,9 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', registerRouter);  
 app.use('/', loginRouter); 
-app.use('/', adminRouter);  
-app.use('/', managerRouter);  
-app.use('/', userRouter);  
+
 
 
 // load assets
